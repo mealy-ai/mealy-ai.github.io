@@ -6,11 +6,24 @@ permalink: /privacy/
 # Privacy Policy
 
 **Effective date:** 2026-06-28
-**Last updated:** 2026-06-28
+**Last updated:** 2026-07-22
 
 This Privacy Policy explains what information the **Mealy** mobile app ("Mealy", "we", "us") collects, how we use it, and the choices you have. Mealy is operated as a personal project by the developer reachable at <mealy.support@gmail.com>.
 
 If you have any question about this policy, email us at <mealy.support@gmail.com>.
+
+## Account and data deletion
+
+You can delete your Mealy account and all of its data at any time. Mealy is operated by the developer reachable at <mealy.support@gmail.com>.
+
+**How to request deletion**
+
+- **In the app.** Open the You tab and choose "Delete account". This is a one-tap, irreversible action handled by a server-side function and typically completes within seconds.
+- **By email (no app needed).** If you have already removed the app, or the in-app flow fails for any reason, email <mealy.support@gmail.com> from your account's email address and ask us to delete your account. We complete these requests within 30 days.
+
+**What gets deleted.** Deleting your account permanently removes everything associated with it from our database: your profile (name, preferences, weight goal and weight-journey entries, height, body fat, waist, daily water target, dietary preferences), your food log, workouts, water intake, weight history, meal feelings and notes, saved go-to meals, saved menus, user-created recipes, shopping list, and your chat threads and messages.
+
+**What is retained.** We do not keep a copy of your account content after deletion. Server error logs, which do not contain your profile content, are retained for up to 30 days for debugging and are then deleted automatically.
 
 ## What we collect
 
