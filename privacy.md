@@ -35,6 +35,8 @@ We only collect information you give us directly through the app, plus the minim
 
 **Food and activity log.** Meals you log (name, ingredients, kcal and macro estimates, meal time, meal context), workouts you record, water intake, weight entries, meal feelings and notes, saved go-to meals, saved menus, and your user-created recipes.
 
+**Health Connect (Android).** On Android, Mealy can read your daily step count from Health Connect to show your activity alongside your nutrition. Mealy only reads step data and never writes to Health Connect. Steps read from Health Connect stay on your device and are never sent to our servers or shared with anyone.
+
 **Photos and voice.** If you log a meal by photo, the photo is uploaded for AI analysis. If you log by voice, the audio is transcribed. We do not retain raw photos or voice recordings beyond the time needed to produce the structured log entry.
 
 **Chat messages.** Messages you send to the Mealy guide chat, the assistant's replies, and chat usage counts for tier limits.
