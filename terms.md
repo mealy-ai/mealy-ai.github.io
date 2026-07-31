@@ -6,7 +6,7 @@ permalink: /terms/
 # Terms of Service
 
 **Effective date:** 2026-06-28
-**Last updated:** 2026-06-28
+**Last updated:** 2026-07-31
 
 Thanks for using **Mealy**. By creating an account or using the app, you agree to these Terms. If you do not agree, please do not use Mealy.
 
@@ -46,7 +46,19 @@ Mealy uses AI providers (Google Gemini, OpenAI) to estimate nutrition, answer ch
 
 ## 6. Subscriptions and purchases
 
-Mealy may offer paid features in the future. If and when it does, billing terms will be shown clearly before purchase and the relevant app store (Apple App Store, Google Play) will handle the transaction under their terms.
+Mealy offers an optional paid subscription, **Mealy Pro**, which unlocks unlimited chat with Mealy and the daily and weekly menu builders. Everything else in Mealy is free, and a free daily allowance of chat messages is included with no purchase.
+
+**Billing.** The price and the billing period are shown on the purchase screen in your local currency before you confirm. Payment is charged to your Apple ID or Google Play account at confirmation of purchase.
+
+**Auto-renewal.** The subscription renews automatically at the same price for the same period unless you cancel at least 24 hours before the end of the current period. Your account is charged for renewal within 24 hours prior to the end of the current period.
+
+**Managing and cancelling.** You can manage or cancel the subscription at any time in your App Store account settings (Settings -> your name -> Subscriptions) or in Google Play (Play Store -> Subscriptions). Deleting the app does not cancel a subscription. Cancelling stops future renewals; you keep access until the end of the period you already paid for.
+
+**Refunds.** Purchases are handled by Apple and Google under their terms, and refunds are theirs to grant. If something went wrong, email <mealy.support@gmail.com> and we will help you sort it out with the store.
+
+**Free trials.** If a free trial is ever offered, any unused portion is forfeited when you buy a subscription.
+
+**Price changes.** If the price changes, the store notifies you and asks for your consent before the change takes effect on your subscription.
 
 ## 7. Service availability
 

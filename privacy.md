@@ -6,7 +6,7 @@ permalink: /privacy/
 # Privacy Policy
 
 **Effective date:** 2026-06-28
-**Last updated:** 2026-07-22
+**Last updated:** 2026-07-31
 
 This Privacy Policy explains what information the **Mealy** mobile app ("Mealy", "we", "us") collects, how we use it, and the choices you have. Mealy is operated as a personal project by the developer reachable at <mealy.support@gmail.com>.
 
@@ -43,6 +43,8 @@ We only collect information you give us directly through the app, plus the minim
 
 **Device-only preferences.** Some UI preferences (locale prefs, water-intake-by-day cache, weight cache, custom menus, go-to meals) are stored on your device using AsyncStorage and are not sent to our servers unless cloud sync is enabled by signing in.
 
+**Subscription status.** If you buy Mealy Pro, we record whether your subscription is active so the app can unlock the paid features and so support can help you if a purchase does not unlock. We never receive or store your card number, billing address, or any other payment details - those stay with Apple or Google.
+
 **Technical information.** Standard logs that any modern app produces (request timestamps, error traces). We do not use third-party analytics or advertising SDKs and do not track you across other apps or websites.
 
 ## How we use the information
@@ -62,6 +64,14 @@ Mealy's chat assistant and food-recognition features call **Google Gemini** (and
 - OpenAI: <https://openai.com/policies/privacy-policy/>
 
 The provider key is held server-side and is never embedded in the app binary. Requests are made over HTTPS.
+
+## How subscriptions are handled
+
+Mealy Pro is sold only through the Apple App Store and Google Play. We use **RevenueCat** to check with the store whether your subscription is active. RevenueCat receives your store transaction and, if you are signed in to Mealy, your Mealy account id, so that a subscription you bought on one device unlocks Pro on your other devices and on the other platform. If you are not signed in, the purchase is held against an anonymous id that RevenueCat generates, and we cannot connect it to you.
+
+RevenueCat privacy policy: <https://www.revenuecat.com/privacy>
+
+We never receive your card number or billing address. Apple and Google handle the payment and hold those details.
 
 ## How long we keep your data
 
