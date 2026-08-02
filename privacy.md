@@ -6,7 +6,7 @@ permalink: /privacy/
 # Privacy Policy
 
 **Effective date:** 2026-06-28
-**Last updated:** 2026-07-31
+**Last updated:** 2026-08-02
 
 This Privacy Policy explains what information the **Mealy** mobile app ("Mealy", "we", "us") collects, how we use it, and the choices you have. Mealy is operated as a personal project by the developer reachable at <mealy.support@gmail.com>.
 
@@ -36,6 +36,8 @@ We only collect information you give us directly through the app, plus the minim
 **Food and activity log.** Meals you log (name, ingredients, kcal and macro estimates, meal time, meal context), workouts you record, water intake, weight entries, meal feelings and notes, saved go-to meals, saved menus, and your user-created recipes.
 
 **Health Connect (Android).** On Android, Mealy can read your daily step count from Health Connect to show your activity alongside your nutrition. Mealy only reads step data and never writes to Health Connect. Steps read from Health Connect stay on your device and are never sent to our servers or shared with anyone.
+
+**Apple Health (iOS).** On iPhone, Mealy can read your active and resting energy from Apple Health to show how many calories you burned today, and it may read basic characteristics (height, body weight, date of birth, and biological sex) to estimate your resting energy when Apple Health has no reading of its own. Mealy only reads this data and never writes to Apple Health. Data read from Apple Health stays on your device, is never sent to our servers or shared with anyone, and is never used for advertising. This is optional: the feature is off until you choose to connect Apple Health and grant permission.
 
 **Photos and voice.** If you log a meal by photo, the photo is uploaded for AI analysis. If you log by voice, the audio is transcribed. We do not retain raw photos or voice recordings beyond the time needed to produce the structured log entry.
 
