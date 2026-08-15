@@ -6,7 +6,7 @@ permalink: /privacy/
 # Privacy Policy
 
 **Effective date:** 2026-06-28
-**Last updated:** 2026-08-02
+**Last updated:** 2026-08-15
 
 This Privacy Policy explains what information the **Mealy** mobile app ("Mealy", "we", "us") collects, how we use it, and the choices you have. Mealy is operated as a personal project by the developer reachable at <mealy.support@gmail.com>.
 
@@ -21,7 +21,7 @@ You can delete your Mealy account and all of its data at any time. Mealy is oper
 - **In the app.** Open the You tab and choose "Delete account". This is a one-tap, irreversible action handled by a server-side function and typically completes within seconds.
 - **By email (no app needed).** If you have already removed the app, or the in-app flow fails for any reason, email <mealy.support@gmail.com> from your account's email address and ask us to delete your account. We complete these requests within 30 days.
 
-**What gets deleted.** Deleting your account permanently removes everything associated with it from our database: your profile (name, preferences, weight goal and weight-journey entries, height, body fat, waist, daily water target, dietary preferences), your food log, workouts, water intake, weight history, meal feelings and notes, saved go-to meals, saved menus, user-created recipes, shopping list, and your chat threads and messages.
+**What gets deleted.** Deleting your account permanently removes everything associated with it from our database: your profile (name, preferences, weight goal and weight-journey entries, height, body fat, waist, daily water target, dietary preferences), your food log, workouts, water intake, weight history, meal feelings and notes, saved go-to meals, saved menus, user-created recipes, shopping list, your chat threads and messages, and your diagnostics (usage events and crash reports).
 
 **What is retained.** We do not keep a copy of your account content after deletion. Server error logs, which do not contain your profile content, are retained for up to 30 days for debugging and are then deleted automatically.
 
@@ -47,14 +47,22 @@ We only collect information you give us directly through the app, plus the minim
 
 **Subscription status.** If you buy Mealy Pro, we record whether your subscription is active so the app can unlock the paid features and so support can help you if a purchase does not unlock. We never receive or store your card number, billing address, or any other payment details - those stay with Apple or Google.
 
-**Technical information.** Standard logs that any modern app produces (request timestamps, error traces). We do not use third-party analytics or advertising SDKs and do not track you across other apps or websites.
+**Technical information.** Standard logs that any modern app produces (request timestamps, error traces).
+
+**Diagnostics.** Mealy records app usage events (which screens you open, which features you use, and the counts and durations around them) and crash reports, so we can see what is broken and fix it. These are linked to your account and to an identifier for your app install.
+
+Usage events carry only categories, ids, counts and durations - never the content of what you log, so no food names, weight values, chat text, display names or email addresses. Crash reports carry the error message and stack trace, with email addresses, access tokens and long digit sequences stripped on your device before anything is sent.
+
+Diagnostics are never used for advertising, never sold, and never shared with third parties. They are deleted automatically after 90 days. You can turn them off at any time in the app under You tab → Legal → Share diagnostics; with the switch off, nothing is recorded and anything still waiting to be sent is discarded.
+
+We do not use third-party analytics or advertising SDKs and do not track you across other apps or websites. Diagnostics are collected by Mealy itself and stay in our own database.
 
 ## How we use the information
 
 - Run the features you asked for (saving meals, showing history, building plans, answering chat questions).
 - Personalize the experience (Hebrew/English language, units, gender grammar for Hebrew, dietary preferences).
 - Maintain your account (sign-in, account recovery, account deletion).
-- Improve the app (debugging from non-personal error logs).
+- Improve the app (debugging from error logs, and seeing from usage events which features are used, where people get stuck, and what crashes).
 
 We do **not** sell your data. We do **not** share it with advertisers. We do **not** use your content to train third-party AI models for purposes other than answering your own request.
 
@@ -80,12 +88,14 @@ We never receive your card number or billing address. Apple and Google handle th
 - Profile, food log, workout log, water, weight history, saved meals, saved menus, user recipes, shopping list, and chat threads are kept for as long as your account is active.
 - When you delete your account from inside the app (You tab → Delete account), all of the above is removed from our database. This is a one-tap, irreversible action handled by a server-side function and typically completes within seconds.
 - Server error logs are retained for up to 30 days for debugging.
+- Diagnostics (usage events and crash reports) are retained for 90 days and then deleted automatically by a scheduled job. Deleting your account removes them straight away, along with everything else.
 
 ## Your rights and choices
 
 - **See your data.** Most of it is visible inside the app (history, profile, saved items). For anything else, email us.
 - **Correct your data.** Edit profile fields from the You tab; edit a logged meal from history.
 - **Delete your account and data.** You tab → Delete account. You can also email us if the in-app flow fails for any reason.
+- **Turn off diagnostics.** You tab → Legal → Share diagnostics. Mealy works exactly the same with it off.
 - **Decline AI features.** Mealy still works for manual food logging if you avoid the chat and photo / voice logging features.
 
 If you are in the EU, the UK, or California, you have additional rights under the GDPR, UK GDPR, and CCPA respectively (access, rectification, erasure, portability, objection). To exercise them, email us; we will respond within 30 days.
