@@ -49,9 +49,11 @@ We only collect information you give us directly through the app, plus the minim
 
 **Technical information.** Standard logs that any modern app produces (request timestamps, error traces).
 
-**Diagnostics.** Mealy records app usage events (which screens you open, which features you use, and the counts and durations around them) and crash reports, so we can see what is broken and fix it. These are linked to your account and to an identifier for your app install.
+**Diagnostics.** Mealy records app usage events (which screens you open, which features you use, and the counts and durations around them), crash reports, and failed launches, so we can see what is broken and fix it. Usage events and crash reports are linked to your account and to an identifier for your app install.
 
 Usage events carry only categories, ids, counts and durations - never the content of what you log, so no food names, weight values, chat text, display names or email addresses. Crash reports carry the error message and stack trace, with email addresses, access tokens and long digit sequences stripped on your device before anything is sent.
+
+A failed launch is the one report that is not linked to an account, because at that moment there is no account to link it to. It is sent when the app opens but cannot sign you in, and it records only that this happened: a reason from a short fixed list (no network, a timeout, or a rejected sign-in), the identifier for your app install, the app version, and whether you are on iOS or Android. It carries no name, no email address, no user id, and no text from the error itself.
 
 Diagnostics are never used for advertising, never sold, and never shared with third parties. They are deleted automatically after 90 days. You can turn them off at any time in the app under You tab → Legal → Share diagnostics; with the switch off, nothing is recorded and anything still waiting to be sent is discarded.
 
@@ -88,7 +90,7 @@ We never receive your card number or billing address. Apple and Google handle th
 - Profile, food log, workout log, water, weight history, saved meals, saved menus, user recipes, shopping list, and chat threads are kept for as long as your account is active.
 - When you delete your account from inside the app (You tab → Delete account), all of the above is removed from our database. This is a one-tap, irreversible action handled by a server-side function and typically completes within seconds.
 - Server error logs are retained for up to 30 days for debugging.
-- Diagnostics (usage events and crash reports) are retained for 90 days and then deleted automatically by a scheduled job. Deleting your account removes them straight away, along with everything else.
+- Diagnostics are retained for 90 days and then deleted automatically by a scheduled job. Deleting your account removes your usage events and crash reports straight away, along with everything else. Failed-launch reports hold nothing that identifies you and are not linked to any account, so there is nothing in them for us to find and remove when you delete; they expire on the same 90-day schedule.
 
 ## Your rights and choices
 
