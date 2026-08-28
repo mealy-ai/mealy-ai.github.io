@@ -48,10 +48,11 @@ description: Download Mealy for iPhone or Android.
     // getElementById return null and silently skipped every redirect until 2026-08-28.
     (function () {
       var ua = navigator.userAgent || '';
-      // iPadOS in desktop mode reports as a Mac, and only maxTouchPoints gives it away.
-      var ios = /iPhone|iPad|iPod/.test(ua) ||
-        (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
       var android = /Android/.test(ua);
+      // iPadOS in desktop mode reports as a Mac, and only maxTouchPoints gives it away.
+      // Excluded for Android so the touch heuristic can never outvote an explicit UA.
+      var ios = /iPhone|iPad|iPod/.test(ua) ||
+        (!android && navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
       var el = document.getElementById(ios ? 'ios' : android ? 'android' : '');
       // replace, not assign: Back has to return to Instagram, not bounce through here again.
       if (el) location.replace(el.href);
