@@ -12,20 +12,6 @@ description: Download Mealy for iPhone or Android.
 <title>Get Mealy</title>
 <meta name="description" content="Download Mealy for iPhone or Android." />
 <meta name="robots" content="noindex" />
-<script>
-  // Runs before paint. The markup below is the fallback, not the happy path: a UA we
-  // do not recognise, or no JS at all, still gets two working buttons.
-  (function () {
-    var ua = navigator.userAgent || '';
-    // iPadOS in desktop mode reports as a Mac, and only maxTouchPoints gives it away.
-    var ios = /iPhone|iPad|iPod/.test(ua) ||
-      (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-    var android = /Android/.test(ua);
-    var el = document.getElementById(ios ? 'ios' : android ? 'android' : '');
-    // replace, not assign: Back has to return to Instagram, not bounce through here again.
-    if (el) location.replace(el.href);
-  })();
-</script>
 <style>
   :root { --pink: #EC4899; --ink: #1f2937; --muted: #6b7280; --line: #eef0f3; }
   * { box-sizing: border-box; }
@@ -53,9 +39,24 @@ description: Download Mealy for iPhone or Android.
 <main class="wrap">
   <p class="brand">Mealy</p>
   <h1>Get Mealy</h1>
-  <p>Log meals by photo, and get answers that fit your day.</p>
+  <p>Take a photo of your meal, and Mealy logs the calories and macros for you.</p>
   <a class="btn" id="ios" href="https://apps.apple.com/app/apple-store/id6785238745?pt=129092024&amp;ct=instagram&amp;mt=8">Download for iPhone</a>
   <a class="btn alt" id="android" href="https://play.google.com/store/apps/details?id=app.mealy.client&amp;referrer=utm_source%3Dinstagram%26utm_medium%3Dsocial%26utm_campaign%3Dinstagram">Download for Android</a>
+  <script>
+    // Must stay below the two links, not in <head>: it reads their hrefs, so it needs
+    // them parsed. It still runs mid-parse, before paint. Sitting in <head> is what made
+    // getElementById return null and silently skipped every redirect until 2026-08-28.
+    (function () {
+      var ua = navigator.userAgent || '';
+      // iPadOS in desktop mode reports as a Mac, and only maxTouchPoints gives it away.
+      var ios = /iPhone|iPad|iPod/.test(ua) ||
+        (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+      var android = /Android/.test(ua);
+      var el = document.getElementById(ios ? 'ios' : android ? 'android' : '');
+      // replace, not assign: Back has to return to Instagram, not bounce through here again.
+      if (el) location.replace(el.href);
+    })();
+  </script>
   <p class="foot"><a href="/privacy/">Privacy</a> &middot; <a href="/terms/">Terms</a> &middot; <a href="/support/">Support</a></p>
 </main>
 </body>
