@@ -22,7 +22,7 @@ description: Download Mealy for iPhone or Android.
     line-height: 1.65;
   }
   .wrap { max-width: 420px; margin: 0 auto; padding: 64px 22px 96px; text-align: center; }
-  .brand { color: var(--pink); font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; font-size: 13px; margin: 0 0 10px; }
+  .mark { display: block; width: 84px; height: 84px; margin: 0 auto 18px; border-radius: 23%; }
   h1 { font-size: 28px; line-height: 1.25; margin: 0 0 10px; letter-spacing: -0.01em; }
   p { margin: 0 0 26px; color: var(--muted); }
   .btn {
@@ -33,14 +33,13 @@ description: Download Mealy for iPhone or Android.
   .btn.alt { background: #fff; color: var(--ink); border: 1px solid var(--line); }
   .foot { margin-top: 40px; font-size: 13px; color: var(--muted); }
   .foot a { color: var(--muted); }
-  [dir="rtl"] .brand { letter-spacing: 0; }
 </style>
 </head>
 <body>
 <main class="wrap" id="wrap">
-  <p class="brand" id="brand">Mealy</p>
-  <h1 id="head">Get Mealy</h1>
-  <p id="sub">Take a photo of your meal, and Mealy logs the calories and macros for you.</p>
+  <img class="mark" id="mark" src="/assets/mealy-mark.png" width="84" height="84" alt="Mealy" />
+  <h1 id="head">Download</h1>
+  <p id="sub">Take a photo of your meal, and Mealy does the rest.</p>
   <a class="btn" id="ios" href="https://apps.apple.com/app/apple-store/id6785238745?pt=129092024&amp;ct=instagram&amp;mt=8">Download for iPhone</a>
   <a class="btn alt" id="android" href="https://play.google.com/store/apps/details?id=app.mealy.client&amp;referrer=utm_source%3Dinstagram%26utm_medium%3Dsocial%26utm_campaign%3Dinstagram">Download for Android</a>
   <p class="foot" id="foot"><a href="/privacy/">Privacy</a> &middot; <a href="/terms/">Terms</a> &middot; <a href="/support/">Support</a></p>
@@ -104,10 +103,10 @@ description: Download Mealy for iPhone or Android.
         if (he) {
           document.documentElement.lang = 'he';
           document.getElementById('wrap').setAttribute('dir', 'rtl');
-          document.getElementById('brand').textContent = 'מילי';
-          document.getElementById('head').textContent = 'להוריד את מילי';
+          document.getElementById('mark').alt = 'מילי';
+          document.getElementById('head').textContent = 'להורדה';
           document.getElementById('sub').textContent =
-            'מצלמים את הארוחה, ומילי סופרת את הקלוריות והמאקרו.';
+            'מצלמים את הארוחה ומילי עושה את כל השאר';
           document.getElementById('ios').textContent = 'הורדה לאייפון';
           document.getElementById('android').textContent = 'הורדה לאנדרואיד';
           var f = document.getElementById('foot');
