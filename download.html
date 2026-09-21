@@ -33,15 +33,17 @@ description: Download Mealy for iPhone or Android.
   .btn.alt { background: #fff; color: var(--ink); border: 1px solid var(--line); }
   .foot { margin-top: 40px; font-size: 13px; color: var(--muted); }
   .foot a { color: var(--muted); }
+  [dir="rtl"] .brand { letter-spacing: 0; }
 </style>
 </head>
 <body>
-<main class="wrap">
-  <p class="brand">Mealy</p>
-  <h1>Get Mealy</h1>
-  <p>Take a photo of your meal, and Mealy logs the calories and macros for you.</p>
+<main class="wrap" id="wrap">
+  <p class="brand" id="brand">Mealy</p>
+  <h1 id="head">Get Mealy</h1>
+  <p id="sub">Take a photo of your meal, and Mealy logs the calories and macros for you.</p>
   <a class="btn" id="ios" href="https://apps.apple.com/app/apple-store/id6785238745?pt=129092024&amp;ct=instagram&amp;mt=8">Download for iPhone</a>
   <a class="btn alt" id="android" href="https://play.google.com/store/apps/details?id=app.mealy.client&amp;referrer=utm_source%3Dinstagram%26utm_medium%3Dsocial%26utm_campaign%3Dinstagram">Download for Android</a>
+  <p class="foot" id="foot"><a href="/privacy/">Privacy</a> &middot; <a href="/terms/">Terms</a> &middot; <a href="/support/">Support</a></p>
   <script>
     // Must stay below the two links, not in <head>: it reads their hrefs, so it needs
     // them parsed. It still runs mid-parse, before paint. Sitting in <head> is what made
@@ -53,12 +55,73 @@ description: Download Mealy for iPhone or Android.
       // Excluded for Android so the touch heuristic can never outvote an explicit UA.
       var ios = /iPhone|iPad|iPod/.test(ua) ||
         (!android && navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+
+      // Campaign passthrough. The static hrefs above carry the organic bio defaults, so a
+      // no-JS visitor and a thrown exception here both still land on a working, attributed
+      // link. Everything below only ever narrows that default to a finer campaign token.
+      try {
+        var q = new URLSearchParams(location.search);
+        var pick = function () {
+          for (var i = 0; i < arguments.length; i++) {
+            var v = q.get(arguments[i]);
+            if (v) return v;
+          }
+          return '';
+        };
+        // Meta substitutes {{ad.name}} etc. verbatim, so values arrive with spaces, caps and
+        // punctuation. Apple silently drops a malformed ct; Play silently drops a malformed
+        // referrer. Both failures look exactly like "the campaign produced no installs".
+        var clean = function (v, max) {
+          return String(v || '').toLowerCase()
+            .replace(/[^a-z0-9_-]+/g, '_')
+            .replace(/_{2,}/g, '_')
+            .replace(/^_+|_+$/g, '')
+            .slice(0, max || 40);
+        };
+        var source = clean(pick('utm_source', 's')) || 'instagram';
+        var medium = clean(pick('utm_medium', 'm')) || 'social';
+        var campaign = clean(pick('utm_campaign', 'c')) || 'instagram';
+        var content = clean(pick('utm_content', 'v'));
+
+        // Apple gives one 40-char token for both levels, so creative rides inside campaign.
+        var ct = (content ? campaign + '-' + content : campaign).slice(0, 40);
+        document.getElementById('ios').href =
+          'https://apps.apple.com/app/apple-store/id6785238745?pt=129092024&ct=' +
+          encodeURIComponent(ct) + '&mt=8';
+
+        var ref = 'utm_source=' + source + '&utm_medium=' + medium + '&utm_campaign=' + campaign +
+          (content ? '&utm_content=' + content : '');
+        document.getElementById('android').href =
+          'https://play.google.com/store/apps/details?id=app.mealy.client&referrer=' +
+          encodeURIComponent(ref);
+      } catch (e) {}
+
+      // Hebrew is the beachhead, and this page is the first thing a Hebrew ad hands over to.
+      // It matters on desktop, with JS-blocked redirects, and during Meta's own ad review.
+      try {
+        var he = /^(he|iw)/i.test(navigator.language || '') ||
+          (new URLSearchParams(location.search)).get('l') === 'he';
+        if (he) {
+          document.documentElement.lang = 'he';
+          document.getElementById('wrap').setAttribute('dir', 'rtl');
+          document.getElementById('brand').textContent = 'מילי';
+          document.getElementById('head').textContent = 'להוריד את מילי';
+          document.getElementById('sub').textContent =
+            'מצלמים את הארוחה, ומילי סופרת את הקלוריות והמאקרו.';
+          document.getElementById('ios').textContent = 'הורדה לאייפון';
+          document.getElementById('android').textContent = 'הורדה לאנדרואיד';
+          var f = document.getElementById('foot');
+          if (f) f.innerHTML = '<a href="/privacy/">פרטיות</a> &middot; ' +
+            '<a href="/terms/">תנאים</a> &middot; <a href="/support/">תמיכה</a>';
+        }
+      } catch (e) {}
+
       var el = document.getElementById(ios ? 'ios' : android ? 'android' : '');
       // replace, not assign: Back has to return to Instagram, not bounce through here again.
-      if (el) location.replace(el.href);
+      // ?nr=1 holds the page so Meta's reviewer, and you, can actually look at it.
+      if (el && (new URLSearchParams(location.search)).get('nr') !== '1') location.replace(el.href);
     })();
   </script>
-  <p class="foot"><a href="/privacy/">Privacy</a> &middot; <a href="/terms/">Terms</a> &middot; <a href="/support/">Support</a></p>
 </main>
 </body>
 </html>
